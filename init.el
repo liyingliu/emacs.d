@@ -44,7 +44,7 @@
 (global-hungry-delete-mode)
 (elpy-enable)
 (global-set-key [f8] 'neotree-toggle)
-enable autopep8 formatting on save
+;;enable autopep8 formatting on save
 (require 'py-autopep8)
 (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
 (setq py-autopep8-options '("-a" "-a"))
