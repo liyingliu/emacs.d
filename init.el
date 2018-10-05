@@ -17,6 +17,7 @@
 		elpy
 		markdown-mode
 		neotree
+		py-autopep8
 		) "Default packages")
  (setq package-selected-packages my/packages)
  (defun my/packages-installed-p ()
@@ -43,6 +44,10 @@
 (global-hungry-delete-mode)
 (elpy-enable)
 (global-set-key [f8] 'neotree-toggle)
+enable autopep8 formatting on save
+(require 'py-autopep8)
+(add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+(setq py-autopep8-options '("-a" "-a"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;other setting
