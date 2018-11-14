@@ -92,3 +92,10 @@
 ;;(global-set-key (kbd "C-<right>") 'end-of-line)
 ;;(global-set-key (kbd "C-<left>") 'beginning-of-line)
 
+;;hide show code
+(add-hook 'python-mode-hook 'hs-minor-mode)
+(with-eval-after-load "python"
+  (define-key python-mode-map (kbd "C-c TAB") 'hs-toggle-hiding)
+  (define-key python-mode-map (kbd "C-c h") 'hs-hide-all)
+  (define-key python-mode-map (kbd "C-c s") 'hs-show-all)
+  )
