@@ -18,6 +18,8 @@
 		markdown-mode
 		neotree
 		py-autopep8
+		aggressive-indent
+		imenu-list       
 		) "Default packages")
  (setq package-selected-packages my/packages)
  (defun my/packages-installed-p ()
@@ -99,3 +101,13 @@
   (define-key python-mode-map (kbd "C-c h") 'hs-hide-all)
   (define-key python-mode-map (kbd "C-c s") 'hs-show-all)
   )
+
+;;aggressive indent
+(require 'aggressive-indent)
+(add-hook 'python-mode-hook #'aggressive-indent-mode)
+
+;;sidebar
+(setq imenu-list-focus-after-activation t)
+(setq imenu-list-auto-resize t)
+(setq imenu-list-size     0.15)
+(setq imenu-list-position 'right)
