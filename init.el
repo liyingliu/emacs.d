@@ -111,3 +111,4 @@
 (setq imenu-list-auto-resize t)
 (setq imenu-list-size     0.15)
 (setq imenu-list-position 'right)
+(global-set-key [f9] 'imenu-list)
