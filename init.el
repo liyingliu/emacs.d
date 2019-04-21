@@ -53,6 +53,7 @@
 ;;load files
 (load-user-file "myconfig.el")
 (load-user-file "mypython.el")
+(load-user-file "myc.el")
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
