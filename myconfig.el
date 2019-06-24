@@ -58,7 +58,7 @@
 ;; close scroll bar
 (scroll-bar-mode -1)
 ;; show line number
-;;(global-linum-mode 1)
+(global-linum-mode 1)
 ;; set cursor type
 (setq-default cursor-type 'bar)
 ;; close open help 
