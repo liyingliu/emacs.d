@@ -1,5 +1,5 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;packages 
+;;packages
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (when (>= emacs-major-version 24)
      (require 'package)
@@ -19,6 +19,11 @@
 		gh-md
 		neotree
 		py-autopep8
+		clang-format
+		company-irony
+		irony
+		company
+		;;company-irony-c-headers
 		;;aggressive-indent
 		;;imenu-list
 		) "Default packages")
@@ -56,8 +61,18 @@
 (load-user-file "myc.el")
 
 
+;;to install irony-server: brew install llvm;export LDFLAGS="-L/usr/local/opt/llvm/lib";export CPPFLAGS="-I/usr/local/opt/llvm/include";https://github.com/Sarcasm/irony-mode/issues/167
+(require 'irony)
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+(add-hook 'after-init-hook 'global-company-mode)
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
+(add-to-list 'company-backends 'company-irony-c-headers)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;key bindings 
+;;key bindings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; set open init file to f2
 (global-set-key (kbd "<f2>") 'open-init-file)
