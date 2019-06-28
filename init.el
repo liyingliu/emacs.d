@@ -23,7 +23,6 @@
 		company-irony
 		irony
 		company
-		;;company-irony-c-headers
 		;;aggressive-indent
 		;;imenu-list
 		) "Default packages")
@@ -60,19 +59,6 @@
 (load-user-file "mypython.el")
 (load-user-file "myc.el")
 
-
-;;to install irony-server: brew install llvm;export LDFLAGS="-L/usr/local/opt/llvm/lib";export CPPFLAGS="-I/usr/local/opt/llvm/include";https://github.com/Sarcasm/irony-mode/issues/167
-;;(require 'irony)
-;;(add-hook 'c++-mode-hook 'irony-mode)
-;;(add-hook 'c-mode-hook 'irony-mode)
-;;(add-hook 'objc-mode-hook 'irony-mode)
-;;(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-
-;;only the following 3 lines can have drop downbox, if with the above 5 lines dropdown are gone,but autocomplete still there
-(add-hook 'after-init-hook 'global-company-mode)
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-irony))
-(add-to-list 'company-backends 'company-irony-c-headers)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;key bindings
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
